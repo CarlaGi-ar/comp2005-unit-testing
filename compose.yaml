@@ -1,0 +1,11 @@
+services:
+  webservice:
+    build: "./demo"
+    volumes:
+      - ./demo:/usr/src/app:rw
+    working_dir: /usr/src/app
+    ports:
+      - "81:8080"
+    command: sh -c "
+      chmod +x run.sh &&
+      ./run.sh"
